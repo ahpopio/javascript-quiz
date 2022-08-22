@@ -18,10 +18,23 @@ var questions = [
         question: "What is a callback function?"
         options: ["a party with an eighties or nineties theme", "a function someone else has written for you", "passing a function into another function", "reusing a function from another project"],
         answer: "passing a function into another function"
-    }
+    },
     {
         question: "What is the DOM?"
         options: ["The Document Object Model", "a representation of what you see in the browser", "the thing JavaScript interacts with", "all of these are correct"]
         answer: "all of these are correct"
     }
-]
+];
+
+// grabbing a bunch of DOM elements that need to be shown or hidden depending
+// on user actions
+var questionContainerEl = document.getElementById("question-wrapper");
+var introContainerEl = document.getElementById("intro-wrapper");
+var endingContainerEl = document.getElementById("ending-wrapper");
+var scoreContainerEl = document.getElementById("score");
+var initialsForm = document.getElementById("initials-form");
+var leaderboardContainerEl = document.getElementById("leaderboard");
+var highScoreButton = document.getElementById("high-scores");
+var highScoreList = document.getElementById("high-score-list");
+var correctEl = document.getElementById("correct");
+var incorrectEl = document.getElementById("incorrect");
