@@ -4,20 +4,69 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JavaScript Quiz</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
     <body>
-        <a href="highscores.html">High Scores</a>
-        <div>
-            <!-- Timer div -->
-            <div id="current-time"></div>
-            <!-- Div to put questions in -->
-            <div id="quiz-content">
+        
+        <!-- Header to contain the high scores button and the timer -->
+        <header>
+            <h2 id="high-scores">High Scores</h2>
+            <h2 class="timer">Time: <span id="timer"></span></h2>
+        </header>
+        
+        <!-- Introductory text to be hidden once quiz starts -->
+        <div id="intro-container" class="show">
+            <div class="container intro">
                 <h1>JavaScript Quiz</h1>
-                <p>Test your JavaScript knowledge with a quick quiz! Incorrect answers will take time off the clock.</p>
-                <ul id="quiz-choices"></ul>
-                <button id="start-quiz">Start Quiz!</button>
+                <p>
+                    Try your hand at answering these JavaScript questions correctly! 
+                    Incorrect answers will be penalized!
+                </p>
+                <button class="button start" id="start-quiz">Start Quiz!</button>
             </div>
+        </div>
+
+        <!-- This div will hold the questions and answer buttons -->
+        <!-- to be revealed after user clicks Start Quiz -->
+        <div id="question-wrapper" class="hide">
+            <div class="container questions">
+                <div id="question"></div>
+                <div id="answers" class="button-grid"></div>
+            </div>
+        </div>
+
+        <!-- This div will hold the "Game Over" text and offer -->
+        <!-- the chance to log your high score -->
+        <div id="ending" class="hide">
+            <div class="container end">
+                <div id="score">
+                    <h1>Quiz Complete!</h1>
+                </div>
+                <form id="initials-form" class="initials">
+                    <p>Enter Initials:
+                        <input type="text" name="initials" id="initials" class="text-input" />
+                        <button class="button start" id="submit" type="submit">Submit Score</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- This div will hold local high scores and be revealed when -->
+        <!-- the user clicks "High Scores" -->
+        <div id="leaderboard" class="hide">
+            <div class="container leaderboard">
+                <h1 id="high-scores-h1">High Scores</h1>
+                <ol id="high-scores-list" class="score-list"></ol>
+            </div>
+        </div>
+
+        <!-- These divs will show when the user clicks the correct -->
+        <!-- or incorrect answer -->
+        <div id="correct" class="hide">
+            <h2>Correct!</h2>
+        </div>
+        <div id="incorrect" class="hide">
+            <h2>Incorrect.</h2>
         </div>
         <script src="./assets/js/script.js"></script>
     </body>
